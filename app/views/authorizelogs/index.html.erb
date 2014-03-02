@@ -1,0 +1,27 @@
+<h1>Listing authorizelogs</h1>
+
+
+
+
+<div id="authorizelogContainer">
+  <tbody>
+      <% @authorizelogs.each do |authorizelog| %>
+      <div id="authorizelogTitle">
+        <p><strong>Title</strong></p>
+        <p><%= authorizelog.title %></p>
+      </div>
+      <div id="authorizelogBody">
+        <p><strong>Body</strong></p>
+        <p><%= authorizelog.body %></p>
+      </div>
+      <div id="authorizelogLinks">
+        <%= link_to 'Show', authorizelog %> 
+        <%= link_to 'Edit', edit_authorizelog_path(authorizelog) %>
+        <%= link_to 'Destroy', authorizelog, method: :delete, data: { confirm: 'Are you sure?' } %><br />
+        <%= link_to 'New Authorizelog', new_authorizelog_path %>
+      </div>
+      <% end %>
+  </tbody>
+</div>
+
+

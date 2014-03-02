@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Devise1</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<% if controller.controller_name == 'authorizelogs' || controller.controller_name == 'sessions' || controller.controller_name == 'registrations' %>
+			<p class="notice"><%= notice %></p>
+			<p class="alert"><%= alert %></p>
+
+			<div id="user_nav" style="text-align:right">
+				<!-- These are helper methods and paths provided by Devise -->
+				<% if user_signed_in? %>
+					Logged in as <strong><%= current_user.email %></strong>.
+					<%= link_to 'Edit profile', edit_user_registration_path %>
+					<%= link_to 'Logout', destroy_user_session_path, method: :delete %>
+				<% else %>
+					<%= link_to 'Sign Up', new_user_registration_path %>
+					<%= link_to 'Login', new_user_session_path %>
+				<% end %>
+			</div>
+
+	<% end %>
+	
+
+<%= yield %>
+
+</body>
+</html>

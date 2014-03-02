@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @authorizelog.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @authorizelog.body %>
+</p>
+
+<%= link_to 'Edit', edit_authorizelog_path(@authorizelog) %> |
+<%= link_to 'Back', authorizelogs_path %>

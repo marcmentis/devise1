@@ -1,0 +1,2 @@
+module AuthorizelogsHelper
+end
